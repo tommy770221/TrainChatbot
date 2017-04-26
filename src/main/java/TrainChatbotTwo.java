@@ -21,7 +21,7 @@ public class TrainChatbotTwo {
 
         Writer writer = null;
         writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream("I:\\字幕訓練\\The.Good.Fight.S01E10.720p.WEBRip.X264-DEFLATE\\star-kongfu.corpus.json"), "utf-8"));
+                new FileOutputStream("I:\\字幕訓練\\The.Good.Fight.S01E10.720p.WEBRip.X264-DEFLATE\\star-king-distroy.corpus.json"), "utf-8"));
         Gson gson = new Gson();
         JsonArray array = new JsonArray();
         JsonArray arrayTwo = new JsonArray();
@@ -29,7 +29,7 @@ public class TrainChatbotTwo {
 
 
 
-           File file = new File("I:\\字幕訓練\\00002.srt");
+           File file = new File("I:\\字幕訓練\\(Love+On+Delivery).srt");
            System.out.println(file.getName());
 
            SRTSub subtitle = new SRTParser().parse(file);
@@ -57,11 +57,11 @@ public class TrainChatbotTwo {
                                arrayTwo.add(new JsonPrimitive(text));
 
                            }
-                           if (i % 5 == 0) {
+                        /*   if (i % 5 == 0) {
                                j++;
                                array.add(arrayTwo);
                                arrayTwo = new JsonArray();
-                           }
+                           }*/
                        }
 
                    }
@@ -73,8 +73,8 @@ public class TrainChatbotTwo {
 
 
 
-       // array.add(arrayTwo);
-        jsonObject.add("star-kongfu", array);
+        array.add(arrayTwo);
+        jsonObject.add("star-king-distroy", array);
         writer.write(gson.toJson(jsonObject));
         writer.close();
 

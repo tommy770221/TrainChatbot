@@ -22,14 +22,14 @@ public class TrainChatbotASSParseTwo {
         // BufferedReader br = new BufferedReader(new FileReader("I:\\字幕訓練\\The.Good.Fight.S01E10.720p.WEBRip.X264-DEFLATE\\The.Good.Fight.S01E10.720p.WEBRip.X264-DEFLATE.繁体.txt"));
         Writer writer = null;
         writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream("I:\\字幕訓練\\star-soccer.corpus.json"), "utf-8"));
+                new FileOutputStream("I:\\字幕訓練\\star-king-distroy.corpus.json"), "utf-8"));
         Gson gson = new Gson();
         JsonArray array = new JsonArray();
         JsonArray arrayTwo = new JsonArray();
         JsonObject jsonObject = new JsonObject();
 
 
-        File file = new File("I:\\字幕訓練\\avchd-shaolin.soccer.720p.mkv.chs.ass");
+        File file = new File("I:\\字幕訓練\\[破坏之王(国粤)].Love.On.Delivery.1994.BluRay.720p.x264.2Audios.AC3-CnSCG_cht.ssa");
         System.out.println(file.getName());
         ASSParser parser = new ASSParser();
         ASSSub subtitle = parser.parse(file);
@@ -47,16 +47,16 @@ public class TrainChatbotASSParseTwo {
                     System.out.println(textTrain);
                     arrayTwo.add(new JsonPrimitive(textTrain));
                 }
-                if (i % 5 == 0) {
+           /*    if (i % 5 == 0) {
                     array.add(arrayTwo);
                     arrayTwo = new JsonArray();
-                }
+                }*/
             }
         }
 
 
-        // array.add(arrayTwo);
-        jsonObject.add("star-soccer", array);
+        array.add(arrayTwo);
+        jsonObject.add("star-king-distroy", array);
         writer.write(gson.toJson(jsonObject));
         writer.close();
 

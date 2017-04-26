@@ -49,6 +49,13 @@
       <artifactId>juniversalchardet</artifactId>
       <version>${juniversalchardet.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.huaban</groupId>
+      <artifactId>jieba-analysis</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>trainChatBot</finalName>
